@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrailerFlix | Tu Cine de Trailers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav id="navbar">
+        <h1 class="logo">TRAILER<span>FLIX</span></h1>
+    </nav>
+
+    <header id="hero">
+        <div id="hero-content">
+            <h2 id="hero-title">Cargando...</h2>
+            <p id="hero-overview">Cargando sinopsis...</p>
+            <button class="btn-play">Ver Trailer</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="row">
+            <h3>Tendencias Actuales</h3>
+            <div id="trending-container" class="movie-row">
+                </div>
+        </section>
+    </main>
+
+    <div id="video-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="video-player"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
