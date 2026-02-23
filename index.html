@@ -9,7 +9,9 @@
 <body>
 
     <nav id="navbar">
-        <h1 class="logo">TRAILER<span>FLIX</span></h1>
+        <div class="nav-left">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Logo" class="logo-img">
+        </div>
         <form id="search-form">
             <input type="text" id="search-input" placeholder="Buscar película..." class="search-bar">
         </form>
@@ -25,7 +27,7 @@
 
     <main>
         <section class="row">
-            <h3>Tendencias Actuales</h3>
+            <h3 id="row-title">Tendencias Actuales</h3>
             <div id="trending-container" class="movie-row"></div>
         </section>
     </main>
