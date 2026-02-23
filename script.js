@@ -11,7 +11,6 @@ const searchForm = document.getElementById('search-form');
 const searchInput = document.getElementById('search-input');
 const rowTitle = document.getElementById('row-title');
 
-// Obtener películas al cargar
 getMovies();
 
 function getMovies() {
@@ -19,7 +18,7 @@ function getMovies() {
         .then(res => res.json())
         .then(data => {
             showMovies(data.results);
-            setupHero(data.results[Math.floor(Math.random() * 10)]); // Hero aleatorio
+            setupHero(data.results[Math.floor(Math.random() * 10)]);
         });
 }
 
@@ -63,17 +62,22 @@ function getTrailer(id) {
             if (trailer) {
                 const modal = document.getElementById('video-modal');
                 const player = document.getElementById('video-player');
-                player.innerHTML = `
-                    <iframe width="100%" height="400px" src="https://www.youtube.com/embed/${trailer.key}?autoplay=1" frameborder="0" allowfullscreen></iframe>
-                `;
+                player.innerHTML = `<iframe width="100%" height="400px" src="https://www.youtube.com/embed/${trailer.key}?autoplay=1" frameborder="0" allowfullscreen></iframe>`;
                 modal.style.display = 'block';
-            } else {
-                alert("¡Ups! No hay trailer para esta película.");
-            }
+            } else { alert("¡Ups! No hay trailer para esta película."); }
         });
 }
 
 document.querySelector('.close-modal').onclick = () => {
     document.getElementById('video-modal').style.display = 'none';
     document.getElementById('video-player').innerHTML = '';
+}
+
+// CÓDIGO PARA PERMITIR LA INSTALACIÓN COMO APP
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('script.js')
+      .then(reg => console.log("App lista para instalar", reg))
+      .catch(err => console.log("Error de registro", err));
+  });
 }
