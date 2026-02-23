@@ -1,0 +1,15 @@
+{
+  "name": "TrailerFlix App",
+  "short_name": "TrailerFlix",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#141414",
+  "theme_color": "#e50914",
+  "icons": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Netflix-new-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
